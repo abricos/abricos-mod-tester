@@ -25,14 +25,16 @@ if (!empty($mod)) {
 
     $file = CWD."/modules/".$mod->name."/brick/".$modBrickName.".html";
     if (file_exists($file)){
-        $modBrick = Brick::$builder->LoadBrickS($modName, $modBrickName);
+        $modBrick = Brick::$builder->LoadBrickS($modName, $modBrickName, $brick);
         $modBrickContent = $modBrick->content;
     }
 }
 
 $brick->content = Brick::ReplaceVarByData($brick->content, array(
     "title" => $title,
-    "result" => $modBrickContent
+    // "result" => $modBrickContent
+    "result" => "[mod]".$modName.":".$modBrickName."[/mod]"
+
 ));
 
 ?>
