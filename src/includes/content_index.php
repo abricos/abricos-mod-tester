@@ -12,8 +12,7 @@ $brick = Brick::$builder->brick;
 
 $v = & $brick->param->var;
 
-Abricos::$modules->RegisterAllModule();
-$modules = Abricos::$modules->GetModules();
+$modules = Abricos::$modules->RegisterAllModule();
 
 $lstMenu = "";
 
